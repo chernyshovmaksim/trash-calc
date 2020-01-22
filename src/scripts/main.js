@@ -289,6 +289,8 @@ window.onload = function () {
         let trashType = document.querySelector('select[name="trash-type"]').value;
         let volume = document.querySelector('select[name="volume"]').value;
         let qty = document.querySelector('select[name="qty"]').value;
-        let loading = document.querySelector().value;
+        let loading = document.querySelector('input[name="loading"]').checked;
+        let leave = document.querySelector('input[name="leave"]').checked;
+
     };
 };

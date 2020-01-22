@@ -163,6 +163,7 @@ window.onload = function () {
     var trashType = document.querySelector('select[name="trash-type"]').value;
     var volume = document.querySelector('select[name="volume"]').value;
     var qty = document.querySelector('select[name="qty"]').value;
-    var loading = document.querySelector().value;
+    var loading = document.querySelector('input[name="loading"]').checked;
+    var leave = document.querySelector('input[name="leave"]').checked;
   };
 };
