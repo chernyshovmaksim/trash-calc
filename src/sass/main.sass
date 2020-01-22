@@ -1,0 +1,893 @@
+/*============    ШРИФТЫ    ===========
+@font-face
+    font-display: swap
+    font-family: Roboto-Bold
+    src: url(../fonts/Roboto-Bold.ttf?v=1)
+
+@font-face
+    font-display: swap
+    font-family: Roboto-Light
+    src: url(../fonts/Roboto-Light.ttf?v=1)
+
+@font-face
+    font-display: swap
+    font-family: Roboto-Regular
+    src: url(../fonts/Roboto-Regular.ttf?v=1)
+
+@font-face
+    font-display: swap
+    font-family: Roboto-Medium
+    src: url(../fonts/Roboto-Medium.ttf?v=1)
+
+h1
+    font-weight: 700
+    font-size: 30pt
+    margin: 0
+    font-family: Roboto-Bold
+
+.header-text
+    font-size: 22pt
+    font-family: Roboto-Bold
+
+p
+    margin-bottom: 0px
+    font-size: 12pt
+    font-family: Roboto-Bold
+
+.reg
+    font-family: Roboto-Regular
+
+.med
+    font-family: Roboto-Medium
+
+.bold
+    font-family: Roboto-Bold
+
+.light
+    font-family: Roboto-Light
+    line-height: 1.5
+
+.fs-xxs
+    font-size: 9pt
+
+.fs-xs
+    font-size: 10pt
+
+.fs-sm
+    font-size: 12pt
+
+.fs-m
+    font-size: 14pt
+
+.fs-l
+    font-size: 16pt
+
+.fs-xl
+    font-size: 18pt
+
+.fs-xxl
+    font-size: 20pt
+
+a
+    color: #000000
+    -webkit-transition: all .3s ease
+    -o-transition: all .3s ease
+    transition: all .3s ease
+
+    &:hover
+        color: #000000
+
+.text-underline
+    text-decoration: underline
+
+p
+    &.grey
+        color: #595959
+
+    &.white-grey
+        color: #c3c3c3
+
+.bordered
+    border: 5px dashed #e2eea6
+
+/*============    общие стили    ===========
+
+body
+    font-family: 'Open Sans', sans-serif
+    overflow-x: hidden
+
+.container
+/* max-width: 970px !important;
+ *margin: 0 auto;
+
+section
+    padding-top: 25px
+    padding-bottom: 25px
+
+.table_ver2, .table_ver1
+    width: 100%
+
+.table_ver
+    overflow: auto
+
+.table_ver2 tr td:first-child
+    min-width: 114px
+    font-weight: 700
+
+.under-table
+    background: #e2eea6
+    border-radius: 5px
+    width: -webkit-fit-content
+    width: -moz-fit-content
+    width: fit-content
+    padding: 4px 8px
+    margin: 15px auto 0
+    text-align: center
+    font-size: 13pt
+
+table
+    white-space: nowrap
+
+.red
+    color: #ff0000
+
+    &:hover
+        color: #ff0000
+
+.btn
+    padding: 5px 20px
+
+.bg-grey
+    background-color: #dbdada
+
+.bg-green
+    background-color: #e2eea6
+
+.video
+    height: 255px
+
+.callback
+    border-radius: 25px
+    font-size: 10pt
+    font-family: Roboto-Medium
+    padding: 10px 20px 9px
+    margin: 4px 0 0 0
+    text-transform: uppercase
+    border: 2px solid #99bc39
+
+    &:hover
+        background: rgba(153, 188, 57, 0.07)
+        color: #000000
+
+.block-bottom
+    display: -webkit-box
+    display: -ms-flexbox
+    display: flex
+    -webkit-box-align: center
+    -ms-flex-align: center
+    align-items: center
+    padding-top: 25px
+
+/*============    popup    ===========
+
+.popup-block-fixed
+    width: 345px
+    height: 285px
+    -webkit-box-shadow: 0px 6px 18px 2px rgba(0, 0, 0, 0.05)
+    box-shadow: 0px 6px 18px 2px rgba(0, 0, 0, 0.05)
+    background-color: rgba(255, 255, 255, 1)
+    position: fixed
+    bottom: 10px
+    right: 20px
+    display: none
+    z-index: 10
+    border-radius: 5px
+
+    button
+        &:hover
+            cursor: pointer
+
+        &[disabled]
+            cursor: inherit
+            opacity: .9
+
+#callback-block-fixed.popup-block-fixed
+    height: 250px
+    bottom: auto
+    top: 30px
+    -webkit-transform: translate3d(-50%, 0, 0)
+    transform: translate3d(-50%, 0, 0)
+    left: 50%
+
+#phone-sent.popup-block-fixed
+    width: 485px
+    height: 115px
+    bottom: auto
+    top: 30px
+    -webkit-transform: translate3d(-50%, 0, 0)
+    transform: translate3d(-50%, 0, 0)
+    left: 50%
+
+#phone-block-fixed:target, #callback-block-fixed:target, #phone-sent:target
+    display: block
+
+.phone-block-fixed-close
+    background: #f1f1f1
+    padding: 10px 0 5px
+    border-top-left-radius: 5px
+    border-top-right-radius: 5px
+
+    p
+        font-size: 16px
+
+    a
+        color: #ff0000
+        position: absolute
+        right: 10px
+        top: 5px
+        font-size: 9pt
+        z-index: 123
+
+.popup-block-fixed
+    .bold.red
+        font-size: 24px
+
+    input[type='text']
+        background: #eceff4
+        border: 1px solid #e6e5e5
+        border-radius: 20px
+        padding: 8px 25px
+        width: 100%
+        text-align: center
+
+        &:focus
+            outline: none
+
+    .reg.fs-xs
+        color: #848480
+
+    button
+        width: 100%
+        background: #99cc33
+        text-transform: uppercase
+        color: #000000
+        font-family: Roboto-Bold
+        font-size: 12px
+        border: none
+        border-radius: 20px
+        padding: 12px 0
+
+/*============    phone-block    ===========
+
+.phone-img
+    height: 52px
+    line-height: 52px
+    padding-left: 15px
+
+    img
+        -webkit-animation: pulse 2s infinite
+        animation: pulse 2s infinite
+
+a.phone
+    font-size: 21px
+    font-family: Roboto-Light
+
+    span
+        font-family: Roboto-Bold
+
+@-webkit-keyframes pulse
+    0%
+        -webkit-transform: rotate(0deg)
+        transform: rotate(0deg)
+
+    20%
+        -webkit-transform: rotate(40deg)
+        transform: rotate(40deg)
+
+    50%
+        -webkit-transform: rotate(-10deg)
+        transform: rotate(-10deg)
+
+    80%
+        -webkit-transform: rotate(40deg)
+        transform: rotate(40deg)
+
+    100%
+        -webkit-transform: rotate(0deg)
+        transform: rotate(0deg)
+
+@keyframes pulse
+    0%
+        -webkit-transform: rotate(0deg)
+        transform: rotate(0deg)
+
+    10%
+        -webkit-transform: rotate(40deg)
+        transform: rotate(40deg)
+
+    20%
+        -webkit-transform: rotate(-10deg)
+        transform: rotate(-10deg)
+
+    30%
+        -webkit-transform: rotate(40deg)
+        transform: rotate(40deg)
+
+    40%
+        -webkit-transform: rotate(-10deg)
+        transform: rotate(-10deg)
+
+    50%
+        -webkit-transform: rotate(40deg)
+        transform: rotate(40deg)
+
+    60%
+        -webkit-transform: rotate(0deg)
+        transform: rotate(0deg)
+
+/*============    nav   ===========
+
+nav
+    margin-top: 25px
+
+/*============    car-choice   ===========
+
+.type-choice
+    .type
+        background-color: #e2eea6
+        padding-top: 25px
+        border-radius: 5px
+        height: 200px
+
+        .fs-l.bold
+            border-bottom: 2px solid #99bc39
+            white-space: nowrap
+
+    a:hover
+        text-decoration: none
+        color: #000000
+
+    .type:hover
+        cursor: pointer
+
+    .type-img img
+        padding-top: 40px
+        width: 85%
+
+    .type-img2 img
+        padding-top: 30px
+        margin-right: -15px
+        width: 90%
+
+    .type-img3 img
+        padding-top: 20px
+        margin-right: -13px
+        width: 90%
+
+    .type-img4 img
+        width: 90%
+
+/*============    table1   ===========
+
+.table_ver1 table
+    font-size: 14pt
+    width: 100%
+    font-family: Roboto-Regular
+    text-align: center
+
+    th
+        color: #000000
+        background-color: #dbdada
+        text-transform: capitalize
+        font-family: Roboto-Bold
+        padding: 15px 0
+
+        &:first-child
+            border-top-left-radius: 5px
+
+        &:last-child
+            border-top-right-radius: 5px
+
+    tr
+        color: #000000
+        background-color: #dbdada
+
+        td
+            border-right: 1px solid #dbdada
+            padding: 15px
+
+    td:last-child
+        border-right: none
+
+    tr
+        &:first-child th:first-child
+            padding: 5px 10px 5px 50px
+            text-align: left
+
+        td:first-child
+            padding: 5px 10px 5px 50px
+            text-align: left
+            width: 172px
+
+        &:nth-child(2n)
+            background-color: #ffffff
+
+        &:last-child td
+            &:first-child
+                border-bottom-left-radius: 5px
+
+            &:last-child
+                border-bottom-right-radius: 5px
+
+/*============    table2   ===========
+
+.table_ver2 table
+    font-size: 14pt
+    width: 100%
+    font-family: Roboto-Regular
+    text-align: center
+
+    tr
+        &:first-child td
+            padding: 15px 5px
+
+            &:first-child
+                border-top-left-radius: 5px
+
+            &:last-child
+                border-top-right-radius: 5px
+
+        color: #000000
+        background-color: #dbdada
+
+        td
+            border-right: 1px solid #dbdada
+            padding: 15px 0
+
+        &:first-child
+            font-family: Roboto-Bold
+
+        td:first-child
+            text-transform: capitalize
+            font-family: Roboto-Bold
+            text-align: left
+            padding-left: 50px
+            padding-right: 10px
+
+    td:last-child
+        border-right: none
+
+    tr
+        &:nth-child(2n)
+            background-color: #ffffff
+
+        &:last-child td
+            &:first-child
+                border-bottom-left-radius: 5px
+
+            &:last-child
+                border-bottom-right-radius: 5px
+
+/*============    	count-price    ===========
+
+#count-price
+    .bg-green
+        border-radius: 5px
+
+    .header
+        color: #ffffff
+        background: #122647
+        border-top-left-radius: 5px
+        border-top-right-radius: 5px
+
+    .subheader
+        font-size: 23px
+
+    .count-price-info
+        padding: 30px 35px 10px
+
+    label
+        margin-bottom: 0
+
+    .btn
+        background: #122647
+        color: #ffffff
+        border-radius: 20px
+        padding: 8px 0
+
+#final-price
+    width: 100%
+
+    .price
+        font-size: 40px
+        font-family: Roboto-Bold
+        text-align: center
+        background: #122647
+        color: #ffffff
+        line-height: 1.3
+        width: 100%
+
+        span
+            font-size: 30px
+
+/*============    	work-scheme    ===========
+
+.work-scheme
+    width: 20%
+    padding: 0 5px
+    text-align: center
+
+    img
+        width: 65%
+
+/*============    	advantages    ===========
+
+.advantages
+    width: 20%
+    padding: 5px 5px 0
+
+    img
+        height: 60px
+
+    &:last-child
+        border-right: none
+
+/*============    	particular-cont    ===========
+
+.part.bg-green
+    padding: 40px 30px
+
+    .type
+        font-size: 26pt
+
+    .price
+        font-size: 30pt
+
+/*============    	cont-more    ===========
+
+.more-info
+    .bg-green
+        border-radius: 5px
+
+    .type-img img
+        height: 85px
+
+    .type-img2 img
+        height: 115px
+
+    .type-img3 img, .type-img4 img
+        height: 140px
+
+    .bg-green
+        padding-bottom: 10px
+
+        .type-img, .type-img2, .type-img3
+            line-height: 170px
+            vertical-align: middle
+            text-align: center
+
+        .type-img4
+            line-height: 170px
+            vertical-align: middle
+            text-align: center
+            position: relative
+
+        /*height: 170px;
+
+        .price
+            font-size: 50px
+
+        a:hover
+            color: #000000
+
+        .price span
+            font-size: 16px
+
+        .type
+            font-size: 26px
+
+        hr
+            width: 87%
+            border-top-width: 2px
+
+        ul
+            padding-left: 30px
+            padding-right: 25px
+
+/*============    	footer    ===========
+
+footer
+    margin-top: 80px
+    background-color: #122647
+    padding: 30px 0
+
+    a, p
+        color: #ffffff
+
+    a
+        opacity: .9
+        color: #ffffff !important
+
+/*============    	АДАПТИВ    ===========
+@media (max-width: 992px)
+    .table_ver1 table tr td:first-child, .table_ver2 table tr td:first-child, .table_ver1 table tr:first-child th:first-child
+        padding-left: 35px
+
+    .fs-m
+        font-size: 12pt
+
+    .fs-l
+        font-size: 14pt
+
+    .fs-xl
+        font-size: 16pt
+
+    .part.bg-green
+        .type
+            font-size: 19pt
+
+        .price
+            font-size: 25pt
+
+        .fs-xl
+            font-size: 11pt
+
+    #phone-sent.popup-block-fixed
+        width: auto
+        height: auto
+
+@media (max-width: 768px)
+    .fs-sm
+        font-size: 11px
+
+    .particular-cont a.phone
+        font-size: 15pt
+
+    h1
+        font-size: 25pt
+
+@media (max-width: 768px) and (min-width: 576px)
+    .sm-text-right
+        text-align: right
+
+@media (max-width: 767.98px)
+    /*============    Верхнее меню ПОСЛЕ   ===========
+
+    .type-choice.after
+        .col-3
+            padding-left: 3px
+            padding-right: 3px
+
+            &:first-child
+                padding-left: 15px
+
+            &:last-child
+                padding-right: 15px
+
+        .type
+            height: 140%
+            padding-top: 30px
+            position: relative
+
+            .fs-l.bold
+                font-size: 14px
+                position: absolute
+                bottom: 6px
+                left: 50%
+                -webkit-transform: translate3d(-50%, 0, 0)
+                transform: translate3d(-50%, 0, 0)
+
+            img
+                padding-top: 0
+                margin: 0
+
+        .type-img2 img
+            margin-top: -12px
+
+        .type-img3 img
+            margin-top: -20px
+
+        .type-img4 img
+            margin-top: -22px
+
+    /*=========== Верхнее меню ПОСЛЕ конец===========
+
+    /*============  блок с единственным контейнером ПОСЛЕ  ===========
+
+    .particular-cont.after .col-6
+        padding-left: 3px
+        padding-right: 3px
+
+        &:first-child
+            padding-left: 15px
+            padding-right: 15px
+
+    .part.bg-green.after
+        padding: 22px 14px
+
+        .type
+            font-size: 19px
+
+    /*============  блок с единственным контейнером ПОСЛЕ конец  ===========
+
+    .work-scheme, .advantages
+        width: 33.3%
+        margin-bottom: 20px
+
+    footer .sm-text-right
+        text-align: right !important
+
+    .type-choice
+        .type-img img, .type-img2 img, .type-img3 img, .type-img4 img
+            width: 70%
+
+    .table_ver1 table tr td:first-child, .table_ver2 table tr td:first-child, .table_ver1 table tr:first-child th:first-child
+        padding-left: 25px
+
+    .popup-block-fixed
+        height: 245px
+
+@media (max-width: 575.68px)
+    /*============    Верхнее меню ПОСЛЕ   ===========
+
+    .type-choice.after
+        .col-3
+            padding-left: 2px
+            padding-right: 2px
+
+        .type
+            padding-top: 25px
+
+            .fs-l.bold
+                font-size: 2.4vw
+
+        .type-img img, .type-img2 img, .type-img3 img, .type-img4 img
+            width: 80%
+
+    /*=== Верхнее меню ПОСЛЕ конец===
+
+    /*============  блок с единственным контейнером ПОСЛЕ  ===========
+
+    .part.bg-green.after
+        padding: 14px 10px
+
+        .type
+            font-size: 4.6vw
+
+        .price
+            font-size: 6vw
+            line-height: 1
+            padding-top: 10px
+
+        .fs-m
+            font-size: 3.1vw
+
+        .fs-xl
+            font-size: 3.8vw
+
+    /*============  блок с единственным контейнером ПОСЛЕ конец  ===========
+
+    /*============  характеристики контейнеров ПОСЛЕ  ===========
+
+    .more-info.after
+        &.col-6
+            padding-left: 3px
+            padding-right: 3px
+
+            &:nth-child(2n-1)
+                padding-left: 15px
+
+            &:nth-child(2n)
+                padding-right: 15px
+
+        .bg-green
+            .type-img, .type-img2, .type-img3, .type-img4
+                line-height: 42vw
+
+        .type-img img, .type-img2 img, .type-img3 img, .type-img4 img
+            height: auto
+            width: 90%
+
+        .bg-green
+            .price
+                font-size: 9vw
+
+            .type
+                font-size: 6vw
+
+            ul
+                padding-left: 6.1vw
+                padding-right: 10px
+
+                .fs-sm
+                    font-size: 2.7vw
+
+        .phone .fs-m
+            font-size: 4vw
+
+    /*============  характеристики контейнеров ПОСЛЕ конец  ===========
+
+    /*============  преимущества ПОСЛЕ ===========
+
+    .advantages.after
+        img
+            height: 40px
+
+        .fs-m
+            font-size: 3.2vw
+            line-height: 1.3
+
+        .fs-sm
+            font-size: 2.6vw
+
+    /*============  преимущества ПОСЛЕ конец  ===========
+
+    /*============  Схема работы ПОСЛЕ  ===========
+
+    .work-scheme.after
+        .fs-m
+            font-size: 3.2vw
+            line-height: 1.2
+
+        .fs-sm
+            font-size: 3vw
+
+    /*============  Схема работы ПОСЛЕ конец  ===========
+
+    /*==== Парк спецтехники ПОСЛЕ =====
+
+    .park-spec.after .fs-sm
+        font-size: 1.8vw
+        line-height: 1
+
+    /*==== Парк спецтехники ПОСЛЕ конец =====
+
+    .xs-text-center
+        text-align: center !important
+
+    .type-choice
+        .type-img img, .type-img2 img, .type-img3 img, .type-img4 img
+            width: 35%
+
+    h1
+        font-size: 23pt
+
+@media (max-width: 475px)
+    #count-price .count-price-info
+        padding: 30px 15px 10px
+
+@media (max-width: 400px)
+    .work-scheme, .advantages
+        width: 50%
+
+    a.phone
+        font-size: 17pt
+
+@media (max-width: 360px)
+    .type-choice.after .type-img img
+        margin-top: -10px
+
+    a.phone
+        font-size: 16pt
+
+    .fs-xs
+        font-size: 9pt
+
+    .fs-xxs
+        font-size: 8pt
+
+    .popup-block-fixed
+        width: 300px
+
+    .phone-block-fixed-close p
+        font-size: 10pt
+
+@media (max-width: 330px)
+    .work-scheme, .advantages
+        width: 100% !important
+
+    a.phone
+        font-size: 14pt !important
+
+    .phone-img img
+        width: 25px

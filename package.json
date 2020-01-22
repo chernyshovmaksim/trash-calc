@@ -1,0 +1,30 @@
+{
+    "name": "gulp-builder",
+    "version": "1.0.0",
+    "description": "",
+    "main": "gulpfile.js",
+    "dependencies": {},
+    "devDependencies": {
+        "@babel/core": "^7.5.5",
+        "@babel/preset-env": "^7.5.5",
+        "browser-sync": "^2.26.7",
+        "gulp": "^4.0.2",
+        "gulp-autoprefixer": "^6.1.0",
+        "gulp-babel": "^8.0.0",
+        "gulp-pug": "^4.0.1",
+        "gulp-sass": "^4.0.2"
+    },
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/chernyshovmaksim/pansion-news-portal.git"
+    },
+    "author": "Chernyshov Maksim <chernyshovmaksim56@gmail.com>",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/chernyshovmaksim/pansion-news-portal/issues"
+    },
+    "homepage": "https://github.com/chernyshovmaksim/pansion-news-portal#readme"
+}
