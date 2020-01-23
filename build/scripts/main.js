@@ -207,6 +207,11 @@ window.onload = function () {
       price = price + Number(fix_prices[volume][0]) * Number(qty);
     }
 
+    price = Math.round(Number(price));
     document.querySelector('#final-price').innerHTML = "\n                <div class=\"price\">".concat(price, " <span>\u0440\u0443\u0431.</span></div>\n                <div class=\"row pb-1\">\n                    <div class=\"col text-center bold fs-l text-uppercase pt-3 pb-1\">\u0437\u0430\u043A\u0430\u0436\u0438\u0442\u0435 \u0432\u044B\u0437\u043E\u0432 \u043F\u043E \u0442\u0435\u043B\u0435\u0444\u043E\u043D\u0443</div>\n                </div>\n                <div class=\"row pb-2\">\n                    <div class=\"col text-center\">\n                        <a href=\"tel:+74994905436\" class=\"bold red fs-xxl\">8 (499) 490-54-36</a>\n                    </div>\n                </div>\n        ");
+    document.querySelector('#final-price').scrollIntoView({
+      behavior: 'smooth',
+      block: 'end'
+    });
   };
 };

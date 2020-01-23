@@ -316,6 +316,8 @@ window.onload = function () {
             price = price + (Number(fix_prices[volume][0]) * Number(qty));
         }
 
+        price = Math.round(Number(price));
+
         document.querySelector('#final-price').innerHTML = `
                 <div class="price">${price} <span>руб.</span></div>
                 <div class="row pb-1">
@@ -327,6 +329,8 @@ window.onload = function () {
                     </div>
                 </div>
         `;
+
+        document.querySelector('#final-price').scrollIntoView({ behavior: 'smooth', block: 'end'});
 
     };
 
