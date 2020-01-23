@@ -68,7 +68,6 @@ window.onload = function () {
 
     let container = document.querySelector('#count-price');
 
-
     if (container) {
         let cityId = container.getAttribute('city-id');
         let addField = container.getAttribute('add-field');
@@ -79,9 +78,7 @@ window.onload = function () {
 
             switch (cityRangeLength) {
                 case 1:
-
                     let selectCity = prices[cityRange];
-
                     let formHtml = `<div class="row">
                             <div class="col-lg-5 col-md-6 col-10 m-auto bg-green">
                                 <div class="row header pb-2 pt-2">
@@ -154,15 +151,6 @@ window.onload = function () {
                                 </div>
                                 <div class="row text-center">
                                     <div id="final-price">
-                                        <div class="price">6500 <span>руб.</span></div>
-                                        <div class="row pb-1">
-                                            <div class="col text-center bold fs-l text-uppercase pt-3 pb-1">закажите вызов по телефону</div>
-                                        </div>
-                                        <div class="row pb-2">
-                                            <div class="col text-center">
-                                                <a href="tel:+74994905436" class="bold red fs-xxl"><img src="img/call.png" class="mr-1" alt="">8 (499) 490-54-36</a>
-                                            </div>
-                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -170,14 +158,36 @@ window.onload = function () {
 
                     container.innerHTML = formHtml;
 
-                    let calcPrice = document.querySelector('.calc-price');
-                    calcPrice.addEventListener('click', function (e) {
-                        countPrice();
+                    document.querySelector('select[name="volume"]').addEventListener('change', function() {
+                        if (Number(document.querySelector('select[name="volume"]').value) === 3){
+                            document.querySelector('input[name="leave"]').checked = false;
+                            document.querySelector('input[name="leave"]').disabled = true;
+                        } else {
+                            document.querySelector('input[name="leave"]').disabled = false;
+                        }
+                    });
+                    let calcPrice1 = document.querySelector('.calc-price');
+                    calcPrice1.addEventListener('click', function () {
+                        countPrice(selectCity);
                     });
 
                     break;
 
                 case 2:
+                    let citiesList = [];
+                    cityRange = cityRange.split(',')
+                    Object.keys(prices).map(function (key) {
+                        if (Number(key) >= cityRange[0] && Number(key) <= cityRange[1]) {
+                            citiesList[key] = prices[key];
+                        }
+                    });
+
+                    let citiesHtml = '';
+
+                    citiesList.forEach(function(el, index) {
+                        citiesHtml += `<option value="${index}">${el[4]}</option>`
+                    });
+
                     let form2 = `<div class="row">
                             <div class="col-lg-5 col-md-6 col-10 m-auto bg-green">
                                 <div class="row header pb-2 pt-2">
@@ -203,16 +213,10 @@ window.onload = function () {
                                         </div>
                                     </div>
                                     <div class="row mb-3">
-                                        <div class="col text-left">
-                                            <p class="bold fs-sm">Выберите Заголовок 2</p>
+                                        <div class="col text-left parent-select">
+                                            <p class="bold fs-sm">${addField}</p>
                                             <select name="city-id" class="w-100 form-control">
-                                                <option value="14">Чехов</option>
-                                                <option value="15">Дмитров</option>
-                                                <option value="16">Долгопрудный</option>
-                                                <option value="17">Домодедово</option>
-                                                <option value="18">Электросталь</option>
-                                                <option value="19">Фрязино</option>
-                                                <option value="30">Люберцы</option>
+                                                ${citiesHtml}
                                             </select>
                                         </div>
                                     </div>
@@ -258,39 +262,72 @@ window.onload = function () {
                                     </div>
                                     <div class="row mb-3">
                                         <div class="col">
-                                            <a href="javascript:void(0)" class="btn bold w-100">Рассчитать цену</a>
+                                            <a href="javascript:void(0)" class="btn bold w-100 calc-price">Рассчитать цену</a>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="row text-center">
                                     <div id="final-price">
-                                        <div class="price">6500 <span>руб.</span></div>
-                                        <div class="row pb-1">
-                                            <div class="col text-center bold fs-l text-uppercase pt-3 pb-1">закажите вызов по телефону</div>
-                                        </div>
-                                        <div class="row pb-2">
-                                            <div class="col text-center">
-                                                <a href="tel:+74994905436" class="bold red fs-xxl"><img src="img/call.png" class="mr-1" alt="">8 (499) 490-54-36</a>
-                                            </div>
-                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>`;
+
                     container.innerHTML = form2;
+
+                    document.querySelector('select[name="volume"]').addEventListener('change', function() {
+                        if (Number(document.querySelector('select[name="volume"]').value) === 3){
+                            document.querySelector('input[name="leave"]').checked = false;
+                            document.querySelector('input[name="leave"]').disabled = true;
+                        } else {
+                            document.querySelector('input[name="leave"]').disabled = false;
+                        }
+                    });
+
+                    let parentSelect = document.querySelector('.parent-select');
+
+                    document.querySelector('.calc-price').addEventListener('click', function () {
+                        let cityIndex = Number(parentSelect.children[1].value);
+                        countPrice(prices[cityIndex]);
+                    });
+
                     break;
                 default:
                     console.log('Не указан либо не верно введен атрибут city-id-range');
             }
+
         }
     }
 
-    const countPrice = () => {
+    const countPrice = (selectCity) => {
         let trashType = document.querySelector('select[name="trash-type"]').value;
         let volume = document.querySelector('select[name="volume"]').value;
         let qty = document.querySelector('select[name="qty"]').value;
         let loading = document.querySelector('input[name="loading"]').checked;
         let leave = document.querySelector('input[name="leave"]').checked;
 
+
+        let price = Number(trashType) * Number(selectCity[volume]) * Number(qty);
+
+        if (loading) {
+            price = price + (Number(fix_prices[volume][1]) * Number(qty));
+        }
+        if(leave) {
+            price = price + (Number(fix_prices[volume][0]) * Number(qty));
+        }
+
+        document.querySelector('#final-price').innerHTML = `
+                <div class="price">${price} <span>руб.</span></div>
+                <div class="row pb-1">
+                    <div class="col text-center bold fs-l text-uppercase pt-3 pb-1">закажите вызов по телефону</div>
+                </div>
+                <div class="row pb-2">
+                    <div class="col text-center">
+                        <a href="tel:+74994905436" class="bold red fs-xxl">8 (499) 490-54-36</a>
+                    </div>
+                </div>
+        `;
+
     };
+
 };
